@@ -3,6 +3,23 @@ address {
   margin-top: 26px;
 }
 
+header {
+  padding: 12px;
+}
+
+header > h1 {
+  font-size: 36px;
+}
+
+h1 > a, h1 > a:visited, h1 > a:active, h1 > a:hover {
+  color: #111;
+}
+
+article {
+  margin: auto;
+  width: 95%;
+}
+
 footer ul {
   list-style: none;
 }
@@ -12,21 +29,8 @@ footer li {
   margin-right: 8px;
 }
 
-footer a, footer a:visited, footer a:active {
-  color: #aaa;
-  text-decoration: none;
-}
-
-footer a:hover {
-  border-bottom: 1px dashed #111;
-}
-
 .contact {
   margin: 12px;
-}
-
-.contact h3 {
-  padding-left: 10%;
 }
 
 .about > li:before {
@@ -50,4 +54,8 @@ footer a:hover {
   background-color: white;
   border-radius: 10px;
   box-shadow: 1px 1px 4px 1px #111111;
+}
+
+.container {
+  padding-bottom: 150px;
 }

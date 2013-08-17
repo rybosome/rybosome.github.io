@@ -1,3 +1,4 @@
-name: Rybosome
+name: Silence of the &lambda;s
 markdown: redcarpet
+permalink: /:title.html
 pygments: true
