@@ -1,0 +1,53 @@
+address {
+  float: right;
+  margin-top: 26px;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer li {
+  float: left;
+  margin-right: 8px;
+}
+
+footer a, footer a:visited, footer a:active {
+  color: #aaa;
+  text-decoration: none;
+}
+
+footer a:hover {
+  border-bottom: 1px dashed #111;
+}
+
+.contact {
+  margin: 12px;
+}
+
+.contact h3 {
+  padding-left: 10%;
+}
+
+.about > li:before {
+  content: "\002b";
+  color: gold;
+  font-size: 1.5em;
+  margin-right: 8px;
+}
+
+.background {
+  background: url('/images/seattle-pencil.jpeg') bottom center no-repeat;
+  bottom: 0px;
+  height: 100%;
+  opacity: 0.3;
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+}
+
+.site {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px 1px #111111;
+}
