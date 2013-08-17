@@ -105,7 +105,7 @@ syntax to this problem. Besides, as we all know...
 Preach it Biggie.
 
 [kal-hn]: https://news.ycombinator.com/item?id=6227517
-[kal-hs-src]: https://github.com/rybosome/rybosome.github.io/src/2013-08-17-kal-me-maybe/kal.hs
+[kal-hs-src]: https://github.com/rybosome/rybosome.github.io/blob/master/src/2013-08-17-kal-me-maybe/kal.hs
 [hn-comment]: https://news.ycombinator.com/item?id=6227820
 [one-does-not-simply-link]: http://i.imgur.com/Dg3ForQ.jpg
 [biggie-link]: http://i.qkme.me/3tt5gu.jpg
