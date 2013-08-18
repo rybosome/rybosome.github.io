@@ -1,4 +1,6 @@
-name: Silence of the &lambda;s
+description: Musings on programming from Ryan Eiger, generally related to programming languages and functional programming.
+name: Silence of the &#955;s
 markdown: redcarpet
 permalink: /:title.html
 pygments: true
+url: http://ryboso.me

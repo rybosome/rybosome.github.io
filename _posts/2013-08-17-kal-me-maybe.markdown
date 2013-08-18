@@ -1,5 +1,6 @@
 ---
 date: 2013-08-17 15:00:00
+description: A comparison of Kal (a new JavaScript-transpiled language) to monadic code in Haskell.
 layout: post
 tags: haskell monads
 title: "Kal Me Maybe"
