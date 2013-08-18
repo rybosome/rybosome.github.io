@@ -6,6 +6,11 @@ layout: nil
   <channel>
     <atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
     <description>{{ site.description }}</description>
+    <image>
+      <link>{{ site.url }}</link>
+      <title>Gravatar for Rybosome</title>
+      <url>http://www.gravatar.com/avatar/5326707b2554a7de78429c540a841d32</url>
+    </image>
     <link>{{ site.url }}</link>
     <title>{{ site.name }}</title>
       {% for post in site.posts %}
