@@ -18,6 +18,10 @@ address {
 }
 
 @media screen and (max-width: 400px) {
+  h1 {
+    margin-bottom: 6px;
+  }
+
   ul.about li {
     display: list-item;
     float: none;
