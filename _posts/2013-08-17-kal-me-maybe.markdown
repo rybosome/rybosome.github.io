@@ -53,8 +53,9 @@ structures as baked-in language features, but that this sort of
 control-flow is just as easy to accomplish in a sufficiently powerful
 language. However, as Sean Bean knows...
 
-![One does not simply write a correct Haskell
-program][one-does-not-simply-link]
+<p class="image-container">
+  <img src="http://i.imgur.com/Dg3ForQ.jpg" alt="Aragorn cautioning: 'One does not simply write a correct Haskell program" />
+</p>
 
 In truth, this quick Haskell program doesn't even compile. So, I sat down to actually write a compilable
 implementation. Swagging the data-gathering functions like so...
@@ -100,12 +101,12 @@ Although my initial reaction to Kal may have been "I can just
 do this with monads", maybe there is some value in dedicating specific
 syntax to this problem. Besides, as we all know...
 
-![Monads mo' problems][biggie-link]
+<p class="image-container">
+  <img src="http://i.qkme.me/3tt5gu.jpg" alt="Biggie Smalls, stating: Monads mo' problems" />
+</p>
 
 Preach it Biggie.
 
 [kal-hn]: https://news.ycombinator.com/item?id=6227517
 [kal-hs-src]: https://github.com/rybosome/rybosome.github.io/blob/master/src/2013-08-17-kal-me-maybe/kal.hs
 [hn-comment]: https://news.ycombinator.com/item?id=6227820
-[one-does-not-simply-link]: http://i.imgur.com/Dg3ForQ.jpg
-[biggie-link]: http://i.qkme.me/3tt5gu.jpg

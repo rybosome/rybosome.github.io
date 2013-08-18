@@ -3,12 +3,46 @@ address {
   margin-top: 26px;
 }
 
+@media screen and (max-width: 1000px) {
+  address {
+    clear: both;
+    float: none;
+    margin-bottom: 6px;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  ul.about li {
+    float: left;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  ul.about li {
+    display: list-item;
+    float: none;
+  }
+
+  .site {
+    width: 90%;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+pre {
+  overflow-x: scroll;
+}
+
 header {
   padding: 12px;
 }
 
-header > h1 {
+h1 {
   font-size: 36px;
+  line-height: 1.3em;
 }
 
 h1 > a, h1 > a:visited, h1 > a:active, h1 > a:hover {
@@ -25,7 +59,7 @@ footer ul {
 }
 
 footer li {
-  float: left;
+  display: inline-block;
   margin-right: 8px;
 }
 
@@ -58,4 +92,8 @@ footer li {
 
 .container {
   padding-bottom: 150px;
+}
+
+p.image-container {
+  text-align: center;
 }
