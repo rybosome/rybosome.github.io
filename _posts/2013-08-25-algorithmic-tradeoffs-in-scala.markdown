@@ -238,7 +238,7 @@ problem.
 indicating how happy he would be writing Scala all day." />
 </p>
 
-...and Scala is awesome. =)
+...and Scala is awesome.
 
 [hn-hijack]: https://news.ycombinator.com/item?id=6136316
 [previous-post]: http://ryboso.me/kal-me-maybe.html
