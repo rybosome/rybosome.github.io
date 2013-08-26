@@ -179,33 +179,48 @@ null isn't idiomatic), we can mixin [Traversable][scala-traversable]
 with Node, with the implementation of _getNext_ provided seperately by each sub-type.
 The implementation could look like this:
 
+<strong>EDIT</strong>: Updated below code, discovered a bug where the function passed to
+<code>foreach</code> was being applied multiple times to Forks.
+
 {% highlight scala %}
 sealed abstract class Node[A] extends Traversable[Node[A]] {
   def parent: Option[Node[A]]
   def value: A
 
-  def getNext[A](prev: Node[A]): Option[Node[A]]
+  def getNextAndApply[A,B](prev: Node[A], f: Node[A] => B): Option[Node[A]]
 
-  def foreach[B](f: Node[A] => B): Unit = applyForeach(Some(this), f)
+  def foreach[B](f: Node[A] => B): Unit = applyForeach(Some(this), this, f)
 
-  def applyForeach[B](n: Option[Node[A]], f: Node[A] => B): Unit = n match {
-    case Some(n) =>
-      f(n)
-      applyForeach(getNext(n), f)
+  def applyForeach[B](current: Option[Node[A]], previous: Node[A], f: Node[A] => B): Unit = current match {
+    case Some(n) => applyForeach(getNextAndApply(previous, f), n, f)
     case None => Unit
   }
 }
 
 case class Fork[A](value: A, left: Node[A], right: Node[A], parent: Option[Node[A]]) extends Node[A] {
-  def getNext[A](prev: Node[A]): Option[Node[A]] = {
-    if (prev == left) Some(right)
-    else if (prev == right) parent
-    else Some(left)
+
+  def getNextAndApply[A,B](prev: Node[A], f: Node[A] => B): Option[Node[A]] = {
+    if (prev == left) {
+      // f(this) here would result in in-order traversal
+      Some(right)
+    } else if (prev == right) {
+      f(this) // post-order traversal
+      parent
+    } else {
+      // f(this) here would result in pre-order traversal
+      Some(left)
+    }
   }
+
 }
 
 case class Leaf[A](value: A, parent: Option[Node[A]]) extends Node[A] {
-  def getNext[A](prev: Node[A]): Option[Node[A]] = parent
+
+  def getNextAndApply[A,B](prev: Node[A], f: Node[A] => B): Option[Node[A]] = {
+    f(this) // This looks funny.
+    parent
+  }
+
 }
 
 object Src {
@@ -223,6 +238,10 @@ One cool consequence of implementing _Traversable_ is that this enables us to im
 leaf-node-value-gathering function via combinators rather than recursion. The actual grunt work of efficiently traversing
 the tree is always going to be the same, so this allows us to separate
 traversal from whatever else we want to do with the tree. Neat. =)
+
+In addition, although this isn't implemented in this API, it would be
+trivial to pick between pre-order, in-order, and post-order traversal
+based on caller needs.
 
 ### Conclusion
 
